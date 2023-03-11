@@ -1,0 +1,60 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+button {
+  margin: 0;
+  padding: 0;
+}
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+li {
+  list-style-type: none;
+}
+a,
+address {
+  text-decoration: none;
+  display: block;
+}
+
+.wrapper{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: url('../images/mainBG.jpg') center no-repeat;
+  background-size: cover;
+  font-family: "Roboto", sans-serif;
+}
+.container{
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.dating-page{
+  flex: 1 1 auto;
+}
+//====FOOTER=====================
+.footer__menu{
+  display: flex;
+}
+.footer__menu-item:not(:last-child){
+  margin-right: 10px;
+}
+.footer__menu-link{
+  font-family: "Roboto", sans-serif;
+  padding: 22px 0 20px 0;
+  font-size: 14px;
+  color: #ffffff;
+}
+.footer__menu-link:hover{
+  text-decoration: underline;
+  color:#ffffff;
+}
