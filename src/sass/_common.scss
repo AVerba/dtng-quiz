@@ -50,7 +50,8 @@ address {
   display: flex;
   align-items: center;
 }
-.page__form{
+
+.page__form {
   width: 540px;
   margin: 0 auto;
   position: relative;
@@ -64,19 +65,22 @@ address {
   background: #fff url(../images/logo.png) center no-repeat;
   background-size: 250px;
 }
-.form__progress{
+
+.form__progress {
   position: relative;
   width: 100%;
   height: 5px;
   background: #d4d4d4;
 }
-.form-list{
+
+.form-list {
   display: flex;
   flex-flow: row nowrap;
   overflow: hidden;
   align-items: flex-start;
 }
-.quiz__item{
+
+.quiz__item {
   width: 540px;
   flex: 1 0 100%;
   padding: 30px 40px 0;
@@ -86,31 +90,37 @@ address {
   color: #333333;
   transition: all .5s;
 }
-.main-title{
+
+.main-title {
   margin: 0 0 20px;
   font-size: 26px;
   font-weight: 500;
   line-height: 36px;
   text-align: center;
 }
+
 .quiz__time {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .quiz__time img {
   width: 30px;
   margin-right: 5px;
 }
+
 .quiz__time p {
   display: flex;
   align-items: center;
   margin: 0;
 }
-.quiz__description{
+
+.quiz__description {
   padding-bottom: 21px;
 }
-.quiz__content{
+
+.quiz__content {
   margin: 20px auto;
   color: #333333;
   font-size: 18px;
@@ -118,7 +128,8 @@ address {
   line-height: 28px;
   text-align: center;
 }
-.button{
+
+.button, .view__more {
   cursor: pointer;
   display: block;
   width: 220px;
@@ -134,7 +145,8 @@ address {
   text-decoration: none;
   border: 0;
 }
-.button__more{
+
+.view__more {
   margin-top: 20px;
 }
 
