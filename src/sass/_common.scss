@@ -1,5 +1,7 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
-
+body{
+  font-family: "Roboto", sans-serif;
+}
 h1,
 h2,
 h3,
@@ -34,6 +36,11 @@ address {
   background: url('../images/mainBG.jpg') center no-repeat;
   background-size: cover;
   font-family: "Roboto", sans-serif;
+  @media screen and (max-width: 540px) {
+    width: 100%;
+    margin: 0;
+    background: none;
+  }
 
 }
 
@@ -42,8 +49,10 @@ address {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-left: 10px;
-  margin-right: 10px;
+  @media screen and (max-width: 540px) {
+    margin: 0;
+    width: 100%;
+  }
 }
 
 .dating-page {
@@ -86,11 +95,12 @@ address {
   flex-flow: row nowrap;
   overflow: hidden;
   align-items: flex-start;
+
 }
 
 .slider__item {
-  width: 540px;
-  flex: 1 0 100%;
+  width: 100%;
+  flex: 0 0 100%;
   padding: 30px 40px;
   border-radius: 0 0 8px 8px;
   border: 1px solid #dcdcdc;
@@ -391,11 +401,12 @@ input[type=number] {
 }
 
 //====FOOTER=====================
-.footer{
+.footer {
   width: 540px;
   margin: 0 auto;
   position: relative;
 }
+
 .footer__menu {
   display: flex;
   align-items: center;
@@ -471,33 +482,28 @@ input[type=number] {
 }
 
 //=====MEDIAQUERY==========
-@media (max-width: 540px) {
-  .container {
-    margin: 0;
-    padding: 30px 0;
 
-  }
-  .wrapper {
-    padding: 0;
-    background: none;
-  }
-  .wrapper::before {
+
+@media (max-width: 540px) {
+  .wrapper::before,.container::before {
     display: none;
   }
+
+
 
   .slider {
     height: calc(100vh - 54px);
   }
   .dating-page {
     width: 100%;
-    margin-top: 10px;
+    margin: 0;
   }
   .form__logo {
     width: 100%;
-    height: 50px;
-    border-radius: 8px 8px 0 0;
+    margin: 0;
+
     background: #fff url(../images/logo.png) center no-repeat;
-    background-size: 250px;
+
   }
   .slider__item {
     width: 100%;
@@ -511,12 +517,18 @@ input[type=number] {
   .answers-list {
     width: auto;
     padding: 0;
+    margin: 0 auto;
   }
   .loading {
     width: 100%;
   }
   .footer {
-    border-top: 1px solid #000000;
+    position: absolute;
+    bottom: -28%;
+    padding-top: 15px;
+    border-top: 2px solid #000000;
+    margin-bottom: -15px;
+
   }
   .footer__row {
     display: flex;
@@ -533,5 +545,14 @@ input[type=number] {
   }
   .footer__menu-link {
     color: #000000;
+  }
+  .answers-list{
+    width: 100%;
+    margin: 0 auto;
+  }
+  .footer__menu-link {
+    font-family: "Roboto", sans-serif;
+    padding: 2px 0 20px 0;
+    font-size: 23px;
   }
 }
