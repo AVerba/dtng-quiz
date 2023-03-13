@@ -5,7 +5,9 @@ const slider = document.querySelector('.slider'),
   buttons = document.querySelectorAll('.btn__slider'),
   progressElement = document.querySelector('.page__progress__filled'),
   maxItems = slider__items.length,
-  ProgressStep = 100 / (maxItems);
+  ProgressStep = 100 / (maxItems),
+  error = document.querySelector("[data-error]"),
+  userAge=document.getElementById('user-age');
 
 
 const transformNum = () => {
@@ -40,9 +42,25 @@ const setListeners = () => {
   buttons.forEach(function(item) {
     item.addEventListener('click', () => {
 
-      ProgressWidth += ProgressStep;
-      addActive('plus');
-      progressElement.style.width = `${ProgressWidth}%`;
+      if(item.id==="userAgeBtn"){
+        if(userAge.value<18){
+          error.classList.remove("_is-hidden");
+          setTimeout(()=>{
+            error.classList.add("_is-hidden");
+            window.location.href = "/";
+          }, 3000);
+        }
+        else{
+          ProgressWidth += ProgressStep;
+          addActive('plus');
+          progressElement.style.width = `${ProgressWidth}%`;
+
+        }
+      }else {
+        ProgressWidth += ProgressStep;
+        addActive('plus');
+        progressElement.style.width = `${ProgressWidth}%`;
+      }
     });
   });
 };

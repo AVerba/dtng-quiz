@@ -98,6 +98,12 @@
               </ul>
             </li>
             <li class='slider__item'>
+              <h2 class='sub-title'>Пожалйста ,введите свой возраст</h2>
+              <input id="user-age" class="age-input" type="number" name="age" placeholder="Введите ваш возраст..." min="15" max="99">
+
+              <button id="userAgeBtn" class='btn__slider button button__next'>Продолжить</button>
+            </li>
+            <li class='slider__item'>
               <div class='analyzer'>
                 <p class='description__analyzer'>Анализируем ваши ответы...</p>
                 <div class='loading'>
@@ -115,24 +121,26 @@
                 <div class='spinner__description'>Идет поиск ...</div>
               </div>
               <div class='review'>
-                <img class="review__logo" src="./images/logo.png" alt="JuliaDates">
-                <div class="review__description">Крупнейший Сайт для Поиска Содержанок</div>
-                <div class="review__rating">
-                  <span class="rating__score">9.8</span>
-                  <div class="rating__stars">
-                    <div class="stars__filled">★★★★★</div>
+                <img class='review__logo' src='./images/logo2.jpg' alt='JuliaDates'>
+                <div class='review__description'>Крупнейший Сайт для Поиска Содержанок</div>
+                <div class='review__rating'>
+                  <span class='rating__score'>9.8</span>
+                  <div class='rating__stars'>
+                    <div class='stars__filled'>★★★★★</div>
                     ☆☆☆☆☆
                   </div>
                 </div>
-                <div class="rating__votes">(64525 оценок)</div>
-                <a class="button review__button" href="/go/juliadates?page=bestdatingsiteforyou">Перейти на сайт</a>
-                <a class="review__link" href="/go/juliadates?page=bestdatingsiteforyou">Смотреть другие сайты</a>
+                <div class='rating__votes'>(64525 оценок)</div>
+                <div class='rating__propose'>
+                  <p><img src='./images/check.jpg'>Лучшие чаты для общения</p>
+                  <p><img src='./images/check.jpg'>Быстрые и веселые знакомства</p>
+                </div>
+                <a class='button review__button' href='http://google.com'>Перейти на сайт</a>
+                <a class='review__link' href='https://google.com'>Смотреть другие сайты</a>
               </div>
             </li>
           </ul>
-
         </div>
-
       </div>
     </main>
     <footer class='footer'>
@@ -152,6 +160,22 @@
       </div>
     </footer>
   </div>
+
+</div>
+
+<div class="_backdrop _is-hidden" data-error>
+  <div class="modal__error">
+    <div class="logo__error"></div>
+    <h3>Упс... Возникла ошибка.</h3>
+    <h2 class='message__error'>Сайт предназначен пользователям старше 18 лет</h2>
+    <div class='lds-ring'>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
 </div>
 
 </body>
