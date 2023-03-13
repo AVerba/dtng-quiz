@@ -47,7 +47,7 @@ const setListeners = () => {
           error.classList.remove("_is-hidden");
           setTimeout(()=>{
             error.classList.add("_is-hidden");
-            window.location.href = "/";
+            window.location.href = `${getUrlVars()}`;
           }, 3000);
         }
         else{
@@ -57,6 +57,7 @@ const setListeners = () => {
 
         }
       }else {
+
         ProgressWidth += ProgressStep;
         addActive('plus');
         progressElement.style.width = `${ProgressWidth}%`;
@@ -102,6 +103,16 @@ function showLoading() {
     }
   }, 500)
 }
-
+function getUrlVars() {
+  let vars = {}, hash;
+  const hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+  for (let i = 0; i < hashes.length; i++) {
+    hash = hashes[i].split('=');
+    if (hash[1]) {
+      vars[hash[0]] = hash[1];
+    }
+  }
+  return hashes;
+}
 
 setListeners();
