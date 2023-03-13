@@ -80,10 +80,10 @@ address {
   align-items: flex-start;
 }
 
-.quiz__item {
+.slider__item {
   width: 540px;
   flex: 1 0 100%;
-  padding: 30px 40px 0;
+  padding: 30px 40px;
   border-radius: 0 0 8px 8px;
   border: 1px solid #dcdcdc;
   background-color: #ffffff;
@@ -91,7 +91,7 @@ address {
   transition: all .5s;
 }
 
-.main-title {
+.main-title, .sub-title {
   margin: 0 0 20px;
   font-size: 26px;
   font-weight: 500;
@@ -146,8 +146,53 @@ address {
   border: 0;
 }
 
+.button:hover, .view__more:hover {
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 .view__more {
   margin-top: 20px;
+}
+.answers-list{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * 15px);
+  margin-top: calc(-1 * 15px);
+}
+.answers__item{
+  cursor: pointer;
+  -ms-flex-preferred-size: calc(100% / 4 - 15px);
+  flex-basis: calc(100% / 4 - 15px);
+  margin-left: 15px;
+  margin-top: 15px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+
+}
+.answers__item:hover {
+  -webkit-box-shadow: 0px 0px 16px -1px #000000;
+  box-shadow: 0px 0px 16px -1px #000000;
+}
+.step{
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.answers__item--img{
+  margin: 0 0 10px 0;
+  border-radius: 5px 5px 0 0;
+}
+.answers__item p{
+  text-align: center;
+  margin-bottom: 10px;
+
 }
 
 

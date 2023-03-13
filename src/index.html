@@ -5,6 +5,9 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <title>Page title</title>
   <link rel='stylesheet' href='./sass/index.scss' />
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'
+          type='fbd872239412fee6bbc7b172-text/javascript'></script>
+
   <script type='module' src='./index.js'></script>
 </head>
 <body>
@@ -16,22 +19,88 @@
         <div class='form__progress'>
           <div class='page__progress__filled'></div>
         </div>
-        <ul class='form-list quiz'>
-          <li class='quiz__item'>
-            <h1 class='main-title'>Какой Сайт Знакомств Идеальный для Вас?</h1>
-            <div class='quiz__time'>
-              <p>Время теста</p>
-              <p><img src='./images/clock.svg'>30 сек</p>
-            </div>
-            <div class='quiz__description'>
-              <p class='quiz__content'>Задумывались ли Вы, какой сайт знакомств использовать? Узнайте, какой из них
-                подходит Вам лучше всего!</p>
-              <button class='button button__next'>Начать</button>
-              <a class='view__more' href='https://google.com' target='_blank' rel='noreferrer noopener'>Просмотреть
-                еще</a>
-            </div>
-          </li>
-        </ul>
+        <div class='slider'>
+          <ul class='slider__wrapper form-list'>
+            <li class='slider__item active'>
+              <h1 class='main-title'>Какой Сайт Знакомств Идеальный для Вас?</h1>
+              <div class='quiz__time'>
+                <p>Время теста</p>
+                <p><img src='./images/clock.svg'>30 сек</p>
+              </div>
+              <div class='quiz__description'>
+                <p class='quiz__content'>Задумывались ли Вы, какой сайт знакомств использовать? Узнайте, какой из них
+                  подходит Вам лучше всего!</p>
+                <button class='btn__slider button button__next'>Начать</button>
+                <a class='view__more btn__slider' href='https://google.com' target='_blank' rel='noreferrer noopener'>Просмотреть
+                  еще</a>
+              </div>
+            </li>
+            <li class='slider__item'>
+              <h2 class='sub-title'>Что во внешности девушки Вас привлекает больше всего?</h2>
+              <p class='step'>1 из 4</p>
+              <ul class='answers-list'>
+                <li class='answers__item btn__slider'>
+                  <img class='answers__item--img' src='./images/blonde.jpg' alt='Блондинки'>
+                  <p class='answers__item--text'>Тонкая талия</p>
+                </li>
+                <li class='answers__item btn__slider'>
+                  <img class='answers__item--img' src='./images/brunettes.jpg' alt='Брюнетки'>
+                  <p class='answers__item--text'>Выразительный взгляд</p>
+                </li>
+                <li class='answers__item btn__slider'>
+                  <img class='answers__item--img' src='./images/redheads.jpg' alt='Рыжие'>
+                  <p class='answers__item--text'>Пышная грудь</p>
+                </li>
+                <li class='answers__item btn__slider'>
+                  <img class='answers__item--img' src='./images/redheads.jpg' alt='Рыжие'>
+                  <p class='answers__item--text'>Чувственные губы</p>
+                </li>
+              </ul>
+            </li>
+            <li class='slider__item'>
+              <h2 class='sub-title'>Каких женщин Вы предпочитаете?</h2>
+              <p class='step'>2 из 4</p>
+              <ul class='answers-list'>
+                <li class='answers__item btn__slider'>
+                  <img class='answers__item--img' src='./images/blonde.jpg' alt='Блондинки'>
+                  <p class='answers__item--text'>Блондинки</p>
+                </li>
+                <li class='answers__item btn__slider'>
+                  <img class='answers__item--img' src='./images/brunettes.jpg' alt='Брюнетки'>
+                  <p class='answers__item--text'>Брюнетки</p>
+                </li>
+                <li class='answers__item btn__slider'>
+                  <img class='answers__item--img' src='./images/redheads.jpg' alt='Рыжие'>
+                  <p class='answers__item--text'>Рыжие</p>
+                </li>
+                <li class='answers__item btn__slider'>
+                  <img class='answers__item--img' src='./images/brownHaired.jpg' alt='Шатенки'>
+                  <p class='answers__item--text'>Шатенки</p>
+                </li>
+              </ul>
+            </li>
+            <li class='slider__item'>
+              <h2 class='sub-title'>Что Вы ищете?</h2>
+              <p class='step'>3 из 4</p>
+              <ul class='answers-list'>
+                <li class=' btn__slider answers__item '>
+                  <img class='answers__item--img' src='./images/blonde.jpg' alt='Блондинки'>
+                  <p class='answers__item--text'>Отношения без Обязательств</p>
+                </li>
+                <li class='answers__item btn__slider'>
+                  <img class='answers__item--img' src='./images/brunettes.jpg' alt='Брюнетки'>
+                  <p class='answers__item--text'>Серьезные Отношения</p>
+                </li>
+                <li class='answers__item btn__slider'>
+                  <img class='answers__item--img' src='./images/redheads.jpg' alt='Рыжие'>
+                  <p class='answers__item--text'>Любовь</p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+        </div>
+
       </div>
     </main>
     <footer class='footer'>
@@ -52,5 +121,6 @@
     </footer>
   </div>
 </div>
+
 </body>
 </html>
