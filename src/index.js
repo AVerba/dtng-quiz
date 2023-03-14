@@ -138,7 +138,7 @@ function shortString(selector) {
 
 
 let selected = document.querySelector('.form-control');
-selected.addEventListener('click', () => loadOptions(event));
+// selected.addEventListener('click', () => loadOptions(event));
 
 function loadOptions(e) {
   for (let i = 18; i < 101; i++) {
@@ -149,5 +149,8 @@ function loadOptions(e) {
   }
   shortString('.short');
 }
+window.onload = function() {
+  selected.addEventListener('click', () => loadOptions(event));
+};
 
 setListeners();
