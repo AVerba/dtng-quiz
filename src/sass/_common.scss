@@ -1,7 +1,9 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
-body{
+
+body {
   font-family: "Roboto", sans-serif;
 }
+
 h1,
 h2,
 h3,
@@ -40,30 +42,16 @@ address {
   display: flex;
   flex-direction: column;
   position: relative;
-  @media screen and (max-width: 540px) {
-    width: 100%;
-    margin: 0;
-    background: none;
-  }
-
 }
 
-//.container {
-//  min-height: 100vh;
-//  display: flex;
-//  flex-direction: column;
-//  position: relative;
-//  @media screen and (max-width: 540px) {
-//    margin: 0;
-//    width: 100%;
-//  }
-//}
+
 
 .dating-page {
   flex: 1 1 auto;
   display: flex;
   align-items: center;
 }
+
 .footer {
   margin-left: 15px;
   position: absolute;
@@ -110,7 +98,7 @@ address {
 .slider__item {
   width: 100%;
   flex: 0 0 100%;
-  padding: 8px;
+  padding: 8px 20px;
   border-radius: 0 0 8px 8px;
   border: 1px solid #dcdcdc;
   background-color: #ffffff;
@@ -184,28 +172,31 @@ address {
 }
 
 .answers-list {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-left: calc(-1 * 15px);
-  margin-top: calc(-1 * 15px);
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 0 30px ;
+  //padding-bottom: 20px;
 }
 
 .answers__item {
+  display: flex;
+  width: 45%;
+  margin-bottom: 10px;
+  flex-flow: column nowrap;
+  border-radius: 8px;
   cursor: pointer;
-  -ms-flex-preferred-size: calc(100% / 4 - 15px);
-  flex-basis: calc(100% / 4 - 15px);
-  margin-left: 15px;
-  margin-top: 15px;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+
+  cursor: pointer;
+  //-ms-flex-preferred-size: calc(100% / 4 - 15px);
+  //flex-basis: calc(100% / 4 - 15px);
+  //margin-left: 15px;
+  //margin-top: 15px;
+  //border-radius: 5px;
+  //-webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  //box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 
 }
 
@@ -488,77 +479,3 @@ input[type=number] {
   margin: 20px 0;
 }
 
-//=====MEDIAQUERY==========
-
-
-@media (max-width: 540px) {
-  .wrapper::before,.container::before {
-    display: none;
-  }
-
-
-
-  .slider {
-    height: calc(100vh - 54px);
-  }
-  .dating-page {
-    width: 100%;
-    margin: 0;
-  }
-  .form__logo {
-    width: 100%;
-    margin: 0;
-    background: #fff url(../images/logo.png) center no-repeat;
-
-  }
-  .slider__item {
-    width: 100%;
-    padding: 15px;
-    border-radius: 0;
-    border: none;
-  }
-  .main-title, .sub-title {
-    margin-top: 0;
-  }
-  .answers-list {
-    width: auto;
-    padding: 0;
-    margin: 0 auto;
-  }
-  .loading {
-    width: 100%;
-  }
-  .footer {
-    position: absolute;
-    bottom: -28%;
-    padding-top: 15px;
-    border-top: 2px solid #000000;
-    margin-bottom: -15px;
-
-  }
-  .footer__row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .footer__menu {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .footer__menu-item {
-    margin: 0;
-  }
-  .footer__menu-link {
-    color: #000000;
-  }
-  .answers-list{
-    width: 100%;
-    margin: 0 auto;
-  }
-  .footer__menu-link {
-    font-family: "Roboto", sans-serif;
-    padding: 2px 0 20px 0;
-    font-size: 23px;
-  }
-}
