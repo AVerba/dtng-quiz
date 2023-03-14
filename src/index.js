@@ -1,10 +1,12 @@
 let ProgressWidth = 0,
   num = 0;
+let selected = document.querySelector('.form-control');
 const slider = document.querySelector('.slider'),
   slider__items = slider.querySelectorAll('.slider__item'),
   buttons = document.querySelectorAll('.btn__slider'),
   progressElement = document.querySelector('.page__progress__filled'),
   maxItems = slider__items.length,
+  nextBtn=document.getElementById('nxtBtn'),
   ProgressStep = 100 / (maxItems),
   error = document.querySelector('[data-error]'),
   userAge = document.getElementById('user-age');
@@ -37,10 +39,19 @@ const addActive = (direction) => {
   }
   elem.classList.add('active');
 };
+nextBtn.addEventListener("click",()=>{
+  console.log(selected)
+  loadOptions(selected)
+} )
 
 const setListeners = () => {
   buttons.forEach(function(item) {
     item.addEventListener('click', () => {
+      if (item.id === 'nextBtn') {
+        console.log(selected)
+        selected.addEventListener('click', () => loadOptions(event));
+
+      }
 
       // if (item.id === 'userAgeBtn') {
       //   if (userAge.value < 18) {
@@ -137,7 +148,7 @@ function shortString(selector) {
 
 
 
-let selected = document.querySelector('.form-control');
+
 // selected.addEventListener('click', () => loadOptions(event));
 
 function loadOptions(e) {
@@ -145,12 +156,13 @@ function loadOptions(e) {
     let item = document.createElement('option');
 
     item.innerHTML = `${i}`;
-    e.target.appendChild(item);
+    e.appendChild(item);
   }
   shortString('.short');
 }
-window.onload = function() {
-  selected.addEventListener('click', () => loadOptions(event));
-};
+// window.onload = function() {
+//   loadOptions(selected)
+//   // selected.addEventListener('click', () => loadOptions(event));
+// };
 
 setListeners();
