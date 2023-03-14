@@ -12,7 +12,6 @@
 </head>
 <body>
 <div class='wrapper'>
-
     <main class='dating-page page'>
       <div class='page__form form'>
         <div class='form__logo'></div>
@@ -99,7 +98,12 @@
             </li>
             <li class='slider__item'>
               <h2 class='sub-title'>Пожалйста ,введите свой возраст</h2>
-              <input id="user-age" class="age-input" type="number" name="age" placeholder="Введите ваш возраст..." min="15" max="99">
+<!--              <input id="user-age" class="age-input" type="number" name="age" placeholder="Введите ваш возраст..." min="15" max="99">-->
+              <div class="yearWrapper">
+                <select class="form-control" id="dYear">
+                  <option class='form-options' id="user-age" value="0">Year</option>
+                  </select>
+              </div>
 
               <button id="userAgeBtn" class='btn__slider button button__next'>Продолжить</button>
             </li>
@@ -159,8 +163,6 @@
         </ul>
       </div>
     </footer>
-
-
 </div>
 
 <div class="_backdrop _is-hidden" data-error>

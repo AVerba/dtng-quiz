@@ -6,8 +6,8 @@ const slider = document.querySelector('.slider'),
   progressElement = document.querySelector('.page__progress__filled'),
   maxItems = slider__items.length,
   ProgressStep = 100 / (maxItems),
-  error = document.querySelector("[data-error]"),
-  userAge=document.getElementById('user-age');
+  error = document.querySelector('[data-error]'),
+  userAge = document.getElementById('user-age');
 
 
 const transformNum = () => {
@@ -31,7 +31,7 @@ const addActive = (direction) => {
   elem.classList.remove('active');
 
   elem = slider__items[num];
-  if(num+1  === maxItems){
+  if (num + 1 === maxItems) {
     showLoading();
     ProgressWidth = 100;
   }
@@ -42,26 +42,28 @@ const setListeners = () => {
   buttons.forEach(function(item) {
     item.addEventListener('click', () => {
 
-      if(item.id==="userAgeBtn"){
-        if(userAge.value<18){
-          error.classList.remove("_is-hidden");
-          setTimeout(()=>{
-            error.classList.add("_is-hidden");
-            window.location.href = `${getUrlVars()}`;
-          }, 3000);
-        }
-        else{
-          ProgressWidth += ProgressStep;
-          addActive('plus');
-          progressElement.style.width = `${ProgressWidth}%`;
-
-        }
-      }else {
-
-        ProgressWidth += ProgressStep;
-        addActive('plus');
-        progressElement.style.width = `${ProgressWidth}%`;
-      }
+      // if (item.id === 'userAgeBtn') {
+      //   if (userAge.value < 18) {
+      //     error.classList.remove('_is-hidden');
+      //     setTimeout(() => {
+      //       error.classList.add('_is-hidden');
+      //       window.location.href = `${getUrlVars()}`;
+      //     }, 3000);
+      //   } else {
+      //     ProgressWidth += ProgressStep;
+      //     addActive('plus');
+      //     progressElement.style.width = `${ProgressWidth}%`;
+      //
+      //   }
+      // } else {
+      //
+      //   ProgressWidth += ProgressStep;
+      //   addActive('plus');
+      //   progressElement.style.width = `${ProgressWidth}%`;
+      // }
+      ProgressWidth += ProgressStep;
+      addActive('plus');
+      progressElement.style.width = `${ProgressWidth}%`;
     });
   });
 };
@@ -70,14 +72,14 @@ const getRandom = (min, max) => {
   return Math.random() * (max - min) + min;
 };
 const showSpinner = () => {
-  document.querySelector('.analyzer').style.display="none";
-  document.querySelector('.loading__spinner').style.display="flex";
-}
+  document.querySelector('.analyzer').style.display = 'none';
+  document.querySelector('.loading__spinner').style.display = 'flex';
+};
 const showReview = () => {
-  document.querySelector('.loading__spinner').style.display="none";
-  document.querySelector('.review').style.display="flex";
+  document.querySelector('.loading__spinner').style.display = 'none';
+  document.querySelector('.review').style.display = 'flex';
 
-}
+};
 
 function showLoading() {
   const randomDelay = getRandom(2, 6);
@@ -86,14 +88,14 @@ function showLoading() {
   let loadingText = 0;
   const addToLoadText = 100 / (randomDelay * 2);
 
-  const interval = setInterval(function () {
+  const interval = setInterval(function() {
     loadingText = Math.floor(loadingText + addToLoadText);
     if (loadingText > 100) {
       clearInterval(interval);
       loadingText = 100;
     }
-    bar.style.width =`${loadingText}%`;
-    loadingTextElement.innerHTML= `${loadingText}`;
+    bar.style.width = `${loadingText}%`;
+    loadingTextElement.innerHTML = `${loadingText}`;
 
     if (loadingText === 100) {
       setTimeout(showSpinner, 1000);
@@ -101,8 +103,9 @@ function showLoading() {
     if (loadingText === 100) {
       setTimeout(showReview, 3000);
     }
-  }, 500)
+  }, 500);
 }
+
 function getUrlVars() {
   let vars = {}, hash;
   const hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
@@ -113,6 +116,38 @@ function getUrlVars() {
     }
   }
   return hashes;
+}
+function shortString(selector) {
+  const elements = document.querySelectorAll(selector);
+  const tail = '...';
+  if (elements && elements.length) {
+    for (const element of elements) {
+      let text = element.innerText;
+      if (element.hasAttribute('data-limit')) {
+        if (text.length > element.dataset.limit) {
+          element.innerText = `${text.substring(0, element.dataset.limit - tail.length).trim()}${tail}`;
+        }
+      } else {
+        throw Error('Cannot find attribute \'data-limit\'');
+      }
+    }
+  }
+}
+
+
+
+
+let selected = document.querySelector('.form-control');
+selected.addEventListener('click', () => loadOptions(event));
+
+function loadOptions(e) {
+  for (let i = 18; i < 101; i++) {
+    let item = document.createElement('option');
+
+    item.innerHTML = `${i}`;
+    e.target.appendChild(item);
+  }
+  shortString('.short');
 }
 
 setListeners();

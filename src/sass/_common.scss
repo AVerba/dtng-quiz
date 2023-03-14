@@ -250,6 +250,26 @@ input[type=number] {
   position: relative;
   width: 100%;
 }
+.yearWrapper  {
+  width: 100%;
+  min-height: 100px;
+  padding-top:5%;
+}
+
+.form-control {
+  border-color: grey;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 0px;
+  color: grey;
+}
+.form-control:focus{
+  border-color: tomato;
+}
+.form-options{
+  width: 160px;
+}
+
 
 .loading__bar {
   position: absolute;
