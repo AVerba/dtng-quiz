@@ -166,3 +166,19 @@ function loadOptions(e) {
 // };
 
 setListeners();
+
+let PageLoaded = false;
+console.log(PageLoaded)
+
+window.onload = function() {
+  slider__items.forEach(item=>{
+    console.log("BEFORE"+item.className)
+    item.classList.remove('_is-hidden');
+    console.log("AFTER"+item.className)
+
+  })
+
+
+  PageLoaded = true;
+  console.log(PageLoaded)
+}
